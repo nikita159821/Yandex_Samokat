@@ -1,0 +1,9 @@
+1. задание 
+
+SELECT c.login, COUNT(o.id) AS orders_count FROM "Couriers" AS c INNER JOIN "Orders" AS o ON c.id = o."courierId" WHERE o."inDelivery" = true GROUP BY c.login;
+
+2. Задание 
+
+SELECT o.track, CASE WHEN o."finished" = true THEN 2 WHEN o."cancelled" = true THEN -1 WHEN o."inDelivery" = true THEN 1 ELSE 0 END AS order_status FROM "Orders" AS o;
+
+
